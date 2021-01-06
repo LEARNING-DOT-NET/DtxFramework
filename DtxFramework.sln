@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{08C89496-560C-4C71-BFAB-CD9DB405F6E3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{5A858BA2-B531-4342-AE94-DD04C7F6EB1F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microservices", "Microservices", "{3A41DF82-46CC-4CE8-92E2-34F336DAAE34}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{FB91DA51-3A53-4EF7-981C-122FA5619336}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DtxFramework.Domain.Core", "DtxFramework.Domain.Core\DtxFramework.Domain.Core.csproj", "{F03CBAD2-6DD4-4708-A1B0-73B9F6248DF5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F03CBAD2-6DD4-4708-A1B0-73B9F6248DF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F03CBAD2-6DD4-4708-A1B0-73B9F6248DF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F03CBAD2-6DD4-4708-A1B0-73B9F6248DF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F03CBAD2-6DD4-4708-A1B0-73B9F6248DF5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F03CBAD2-6DD4-4708-A1B0-73B9F6248DF5} = {08C89496-560C-4C71-BFAB-CD9DB405F6E3}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {93940671-3CEF-4B57-BA7C-463C71B13ED0}
+	EndGlobalSection
+EndGlobal
