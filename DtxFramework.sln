@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DtxFramework.Domain.Core", "DtxFramework.Domain.Core\DtxFramework.Domain.Core.csproj", "{F03CBAD2-6DD4-4708-A1B0-73B9F6248DF5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DtxFramework.Infrastructure.Bus", "DtxFramework.Infrastructure.Bus\DtxFramework.Infrastructure.Bus.csproj", "{7776182F-623E-40BE-99FD-C41CF3F3A885}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,12 +25,17 @@ Global
 		{F03CBAD2-6DD4-4708-A1B0-73B9F6248DF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F03CBAD2-6DD4-4708-A1B0-73B9F6248DF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F03CBAD2-6DD4-4708-A1B0-73B9F6248DF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7776182F-623E-40BE-99FD-C41CF3F3A885}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7776182F-623E-40BE-99FD-C41CF3F3A885}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7776182F-623E-40BE-99FD-C41CF3F3A885}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7776182F-623E-40BE-99FD-C41CF3F3A885}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F03CBAD2-6DD4-4708-A1B0-73B9F6248DF5} = {08C89496-560C-4C71-BFAB-CD9DB405F6E3}
+		{7776182F-623E-40BE-99FD-C41CF3F3A885} = {5A858BA2-B531-4342-AE94-DD04C7F6EB1F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {93940671-3CEF-4B57-BA7C-463C71B13ED0}
