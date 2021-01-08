@@ -29,6 +29,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DtxFramework.Banking.Domain", "DtxFramework.Banking.Domain\DtxFramework.Banking.Domain.csproj", "{0317851B-476B-4DE6-8E81-ECFDE8014B94}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DtxFramework.Banking.Data", "DtxFramework.Banking.Data\DtxFramework.Banking.Data.csproj", "{8D0B8C27-D0A6-4050-BA96-83FC93CDDC84}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{0317851B-476B-4DE6-8E81-ECFDE8014B94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0317851B-476B-4DE6-8E81-ECFDE8014B94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0317851B-476B-4DE6-8E81-ECFDE8014B94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D0B8C27-D0A6-4050-BA96-83FC93CDDC84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D0B8C27-D0A6-4050-BA96-83FC93CDDC84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D0B8C27-D0A6-4050-BA96-83FC93CDDC84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D0B8C27-D0A6-4050-BA96-83FC93CDDC84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,6 +71,7 @@ Global
 		{D8FD8134-BDD3-4BB4-95DD-A71062962BBB} = {2AEA5EE4-CAD9-4F69-95AF-EA448B7620A4}
 		{9C556CD7-99AA-4D7A-B14D-72CA7F1F1B00} = {2AEA5EE4-CAD9-4F69-95AF-EA448B7620A4}
 		{0317851B-476B-4DE6-8E81-ECFDE8014B94} = {D8FD8134-BDD3-4BB4-95DD-A71062962BBB}
+		{8D0B8C27-D0A6-4050-BA96-83FC93CDDC84} = {DFBDF110-83E9-470D-8967-1D9C3D785B6B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {93940671-3CEF-4B57-BA7C-463C71B13ED0}
