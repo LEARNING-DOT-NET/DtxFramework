@@ -37,6 +37,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bus", "Bus", "{C11F3EE4-1EA
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ioc", "Ioc", "{8E4E5B56-885C-48BD-9373-0FA8CA8061BF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DtxFramework.Banking.Api", "DtxFramework.Banking.Api\DtxFramework.Banking.Api.csproj", "{0DCC5039-E303-4FA3-9682-948A46DEE601}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,10 @@ Global
 		{3BF16B00-B8BF-4948-8870-1091A90BA4BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BF16B00-B8BF-4948-8870-1091A90BA4BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BF16B00-B8BF-4948-8870-1091A90BA4BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DCC5039-E303-4FA3-9682-948A46DEE601}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DCC5039-E303-4FA3-9682-948A46DEE601}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DCC5039-E303-4FA3-9682-948A46DEE601}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DCC5039-E303-4FA3-9682-948A46DEE601}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -85,6 +91,7 @@ Global
 		{3BF16B00-B8BF-4948-8870-1091A90BA4BD} = {9C556CD7-99AA-4D7A-B14D-72CA7F1F1B00}
 		{C11F3EE4-1EA2-4C92-BDA8-1FF3851AAEF5} = {5A858BA2-B531-4342-AE94-DD04C7F6EB1F}
 		{8E4E5B56-885C-48BD-9373-0FA8CA8061BF} = {5A858BA2-B531-4342-AE94-DD04C7F6EB1F}
+		{0DCC5039-E303-4FA3-9682-948A46DEE601} = {B5A87A98-05D4-4F36-A2CE-BC1D9F04D748}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {93940671-3CEF-4B57-BA7C-463C71B13ED0}
