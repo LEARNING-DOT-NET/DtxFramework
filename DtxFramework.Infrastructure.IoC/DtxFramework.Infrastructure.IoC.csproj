@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>net5.0</TargetFramework>
@@ -9,6 +9,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\DtxFramework.Banking.Application\DtxFramework.Banking.Application.csproj" />
+		<ProjectReference Include="..\DtxFramework.Banking.Data\DtxFramework.Banking.Data.csproj" />
+		<ProjectReference Include="..\DtxFramework.Banking.Domain\DtxFramework.Banking.Domain.csproj" />
 		<ProjectReference Include="..\DtxFramework.Domain.Core\DtxFramework.Domain.Core.csproj" />
 		<ProjectReference Include="..\DtxFramework.Infrastructure.Bus\DtxFramework.Infrastructure.Bus.csproj" />
 	</ItemGroup>
