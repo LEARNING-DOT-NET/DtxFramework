@@ -16,5 +16,14 @@
 
 			return result;
 		}
+
+		public async System.Threading.Tasks.Task
+			<System.Collections.Generic.IEnumerable<Domain.Models.Account>> GetAllAsync()
+		{
+			var result =
+				await Repository.GetAllAsync();
+
+			return result;
+		}
 	}
 }

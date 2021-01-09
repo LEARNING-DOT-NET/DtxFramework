@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace DtxFramework.Banking.Data.Repositories
 {
@@ -17,6 +18,20 @@ namespace DtxFramework.Banking.Data.Repositories
 			var result =
 				DatabaseContext.Accounts
 				.ToList()
+				;
+
+			return result;
+		}
+
+		public async System.Threading.Tasks.Task
+			<System.Collections.Generic.IEnumerable<Domain.Models.Account>> GetAllAsync()
+		{
+			// ToListAsync -> using Microsoft.EntityFrameworkCore;
+
+			var result =
+				await
+				DatabaseContext.Accounts
+				.ToListAsync()
 				;
 
 			return result;
