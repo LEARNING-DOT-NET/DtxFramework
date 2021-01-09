@@ -2,7 +2,8 @@
 {
 	public class DatabaseContext : Microsoft.EntityFrameworkCore.DbContext
 	{
-		public DatabaseContext(Microsoft.EntityFrameworkCore.DbContextOptions options) : base()
+		public DatabaseContext
+			(Microsoft.EntityFrameworkCore.DbContextOptions options) : base(options: options)
 		{
 		}
 

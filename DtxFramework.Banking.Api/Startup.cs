@@ -1,15 +1,16 @@
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.DependencyInjection;
-
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace DtxFramework.Banking.Api
 {
 	public class Startup : object
 	{
-		public Startup(Microsoft.Extensions.Configuration.IConfiguration configuration) : base()
+		public Startup
+			(Microsoft.Extensions.Configuration.IConfiguration configuration) : base()
 		{
 			Configuration = configuration;
 		}
@@ -29,6 +30,18 @@ namespace DtxFramework.Banking.Api
 					(Configuration.GetConnectionString("BankingConnectionString"));
 			});
 
+			services.AddSwaggerGen(current =>
+			{
+				current.SwaggerDoc(name: "v1",
+					info: new Microsoft.OpenApi.Models.OpenApiInfo
+					{
+						Version = "v1",
+						Title = "Banking Microservice",
+					});
+			});
+
+			services.AddMediatR(handlerAssemblyMarkerTypes: typeof(Startup));
+
 			Infrastructure.IoC.DependencyContainer.RegisterServices(services: services);
 		}
 
@@ -46,6 +59,14 @@ namespace DtxFramework.Banking.Api
 			app.UseRouting();
 
 			app.UseAuthorization();
+
+			app.UseSwagger();
+
+			app.UseSwaggerUI(current =>
+			{
+				current.SwaggerEndpoint
+					(url: "/swagger/v1/swagger.json", name: "Banking Microservice V1");
+			});
 
 			app.UseEndpoints(endpoints =>
 			{
