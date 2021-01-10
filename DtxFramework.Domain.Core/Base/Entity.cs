@@ -1,8 +1,8 @@
-﻿namespace DtxFramework.Domain.Core.Events
+﻿namespace DtxFramework.Domain.Core.Base
 {
-	public abstract class Base : object
+	public abstract class Entity : object
 	{
-		public Base() : base()
+		protected Entity() : base()
 		{
 			TypeName =
 				GetType().Name;
