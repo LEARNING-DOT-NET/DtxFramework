@@ -2,19 +2,12 @@
 
 namespace DtxFramework.Infrastructure.Bus
 {
-	public sealed class RabbitMQEventBus : object, Domain.Core.Bus.IEventBus
+	public sealed class RabbitMQEventBusSimple : object, Domain.Core.Bus.IEventBus
 	{
-		/// <summary>
-		/// Updated!
-		/// </summary>
-		public RabbitMQEventBus
-			(MediatR.IMediator mediator,
-			Microsoft.Extensions.DependencyInjection.IServiceScopeFactory serviceScopeFactory) : base()
+		public RabbitMQEventBusSimple
+			(MediatR.IMediator mediator) : base()
 		{
 			Mediator = mediator;
-
-			// New!
-			ServiceScopeFactory = serviceScopeFactory;
 
 			EventTypes =
 				new System.Collections.Generic.List<System.Type>();
@@ -31,11 +24,6 @@ namespace DtxFramework.Infrastructure.Bus
 		private System.Collections.Generic.Dictionary
 			<string, System.Collections.Generic.List<System.Type>> EventHandlerTypes
 		{ get; }
-
-		/// <summary>
-		/// New!
-		/// </summary>
-		private Microsoft.Extensions.DependencyInjection.IServiceScopeFactory ServiceScopeFactory { get; }
 
 		public System.Threading.Tasks.Task
 			SendCommand<TCommand>(TCommand command)
@@ -203,43 +191,40 @@ namespace DtxFramework.Infrastructure.Bus
 		{
 			if (EventHandlerTypes.ContainsKey(eventTypeName))
 			{
-				// New!
-				using (var scope = ServiceScopeFactory.CreateScope())
+				System.Collections.Generic.List<System.Type>
+					subscriptions = EventHandlerTypes[eventTypeName];
+
+				foreach (var subscription in subscriptions)
 				{
-					System.Collections.Generic.List<System.Type>
-						subscriptions = EventHandlerTypes[eventTypeName];
+					var eventHandler =
+						System.Activator.CreateInstance(subscription);
 
-					foreach (var subscription in subscriptions)
+					if (eventHandler == null)
 					{
-						//var eventHandler =
-						//	System.Activator.CreateInstance(subscription);
-
-						// Updated!
-						var eventHandler =
-							scope.ServiceProvider.GetService(subscription);
-
-						if (eventHandler == null)
-						{
-							continue;
-						}
-
-						var eventType =
-							EventTypes
-							.Where(current => current.Name.ToLower() == eventTypeName.ToLower())
-							.FirstOrDefault();
-
-						var @event =
-							Newtonsoft.Json.JsonConvert
-							.DeserializeObject(value: message, type: eventType);
-
-						var concreteType =
-							typeof(Domain.Core.Bus.IEventHandler<>).MakeGenericType(typeArguments: eventType);
-
-						await System.Threading.Tasks.Task.Run(() =>
-						{
-							concreteType.GetMethod("Handle").Invoke(eventHandler, new object[] { @event });
-						});
+						continue;
 					}
+
+					var eventType =
+						EventTypes
+						.Where(current => current.Name.ToLower() == eventTypeName.ToLower())
+						.FirstOrDefault();
+
+					var @event =
+						Newtonsoft.Json.JsonConvert
+						.DeserializeObject(value: message, type: eventType);
+
+					var concreteType =
+						typeof(Domain.Core.Bus.IEventHandler<>).MakeGenericType(typeArguments: eventType);
+
+					await System.Threading.Tasks.Task.Run(() =>
+					{
+						concreteType.GetMethod("Handle").Invoke(eventHandler, new object[] { @event });
+					});
+
+					//await
+					//	(System.Threading.Tasks.Task)
+					//	concreteType.GetMethod
+					//	("Handle").Invoke(eventHandler, new object[] { });
 				}
 			}
 		}
