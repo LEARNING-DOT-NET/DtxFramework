@@ -12,8 +12,18 @@ namespace DtxFramework.Infrastructure.IoC
 			(Microsoft.Extensions.DependencyInjection.IServiceCollection services)
 		{
 			// Domain Bus
-			services.AddTransient
-				<Domain.Core.Bus.IEventBus, Bus.RabbitMQEventBus>();
+			//services.AddTransient
+			//	<Domain.Core.Bus.IEventBus, Bus.RabbitMQEventBusSimple>();
+
+			// Updated!
+			services.AddSingleton
+				<Domain.Core.Bus.IEventBus, Bus.RabbitMQEventBus>(sp =>
+				{
+					Microsoft.Extensions.DependencyInjection.IServiceScopeFactory serviceScopeFactory =
+						sp.GetRequiredService<Microsoft.Extensions.DependencyInjection.IServiceScopeFactory>();
+
+					return new Bus.RabbitMQEventBus(sp.GetService<MediatR.IMediator>(), serviceScopeFactory);
+				});
 
 			// Application Service(s)
 			services.AddTransient

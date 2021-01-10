@@ -4,6 +4,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 
 namespace DtxFramework.Banking.Api
 {
@@ -72,6 +73,18 @@ namespace DtxFramework.Banking.Api
 			{
 				endpoints.MapControllers();
 			});
+
+			ConfigureEventBus(app);
+		}
+
+		private void ConfigureEventBus
+			(Microsoft.AspNetCore.Builder.IApplicationBuilder app)
+		{
+			var eventBus =
+				app.ApplicationServices.GetRequiredService<DtxFramework.Domain.Core.Bus.IEventBus>();
+
+			// For Example!
+			//eventBus.Subscribe<LogCreatedEvent, LogEventHandler>();
 		}
 	}
 }
